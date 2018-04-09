@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item active">Home</li>
+{% endblock %}
+
+{% block content %}
+<h1 class="display-1 mb-4">Tracer Insight test app</h1>
+
+<p class="lead">Choose the user experience to interact with the app in different contexts.</p>
+
+<div class="row mb-4">
+    <div class="col-sm-6 mb-4">
+        <div class="card" style="/*width: 18rem;*/">
+          <div class="card-header">
+              <h5 class="card-title mb-0">Tracer Analyst</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Tracerco Technical Consultant</h6>
+              <p class="card-text text-justify"><small>Works with well production data and manages sample results. New lab results are input by him/her, as arrive. Performs quality checks and publishes the results for the client after internal peer review.</small></p>
+            <p class="card-text mb-0">Tasks:</p>
+            <ul>
+                <li><a href="{% url 'frac:new-project' %}" class="card-link">Create a new project</a></li>
+                <li><a href="#" class="card-link">Describe operations</a></li>
+                <li><a href="#" class="card-link">Well production data</a></li>
+                <li><a href="#" class="card-link">Lab samples</a></li>
+                <li><a href="#" class="card-link">Data QC</a></li>
+                <li><a href="#" class="card-link">Report preview & comments</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card" style="/*width: 18rem;*/">
+          <div class="card-header">
+              <h5 class="card-title mb-0">Customer</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Client Reservoir Engineer</h6>
+              <p class="card-text text-justify"><small>Finds all the tracer information in the application, reviewing the reports and inviting new users to the application as required.</small></p>
+            <p class="card-text mb-0">Tasks:</p>
+            <ul>
+                <li><a href="#" class="card-link">View Project List</a></li>
+                <li><a href="#" class="card-link">View Project</a></li>
+                <li><a href="#" class="card-link">View well report</a></li>
+                <li><a href="#" class="card-link">View Interference report</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}

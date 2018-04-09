@@ -1,0 +1,13 @@
+.navbar-brand, .display-1, h1, h2, h3, h4, h5, h6  {
+    font-family: 'Dosis', sans-serif;
+}
+.flex-grow {
+    flex: 1;
+}
+body {
+  min-height: 100vh;
+}
+
+.htContextMenu {
+    font-size: 70%
+}

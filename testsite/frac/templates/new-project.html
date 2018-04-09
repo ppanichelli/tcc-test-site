@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}New Project{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{% url 'frac:home' %}">Home</a></li>
+    <li class="breadcrumb-item active">New Project</li>
+{% endblock %}
+
+{% block content %}
+    <div class="row mb-4">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <form method="post" novalidate>
+              <h3>Project Details</h3>
+              {% csrf_token %}
+              {% include 'includes/form.html' %}
+              <h3>Wells in the project</h3>
+              List all the wells in the project in the table below. You can add the individual injections later.
+              <div class="small my-3" id="well-list-table"></div>
+              <button type="submit" class="btn btn-success btn-block">Next step: tracer injections</button>
+          </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    var dataObject = [
+            {
+                well_name: "FP-1014",
+                total_stages: 20,
+                has_water_tracers: true,
+                has_water_global: true,
+                has_oil_tracers: false,
+                has_gas_tracers: true
+            },
+            {
+                well_name: "FP-1015",
+                total_stages: 19,
+                has_water_tracers: true,
+                has_water_global: true,
+                has_oil_tracers: false,
+                has_gas_tracers: true
+            },
+            {
+                well_name: "FP-1016",
+                total_stages: 21,
+                has_water_tracers: true,
+                has_water_global: false,
+                has_oil_tracers: false,
+                has_gas_tracers: true
+            }
+    ];
+
+    var columns = [
+        {
+            data: 'well_name',
+            type: 'text',
+            width: 150,
+            className: 'htLeft'
+        },
+        {
+            data: 'total_stages',
+            type: 'numeric'
+        },
+        {
+            data: 'has_water_tracers',
+            type: 'checkbox'
+        },
+        {
+            data: 'has_water_global',
+            type: 'checkbox'
+        },
+        {
+            data: 'has_oil_tracers',
+            type: 'checkbox'
+        },
+        {
+            data: 'has_gas_tracers',
+            type: 'checkbox'
+        }
+    ];
+
+    var container = document.getElementById('well-list-table');
+
+    var hot = new Handsontable(container, {
+        data: dataObject,
+        columns: columns,
+        rowHeaders: true,
+        contextMenu: true,
+        width: 700,
+        className: 'htCenter',
+        minSpareRows: 1,
+        stretchH: 'all',
+        colHeaders: ['Well Name', 'Total Stages', 'Water Tracers', 'Water Global', 'Oil Tracers', 'Gas Tracers']
+    });
+</script>
+{% endblock %}
