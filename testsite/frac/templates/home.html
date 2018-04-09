@@ -13,7 +13,7 @@
 
 <div class="row mb-4">
     <div class="col-sm-6 mb-4">
-        <div class="card" style="/*width: 18rem;*/">
+        <div class="card">
           <div class="card-header">
               <h5 class="card-title mb-0">Tracer Analyst</h5>
           </div>
@@ -23,7 +23,7 @@
             <p class="card-text mb-0">Tasks:</p>
             <ul>
                 <li><a href="{% url 'frac:new-project' %}" class="card-link">Create a new project</a></li>
-                <li><a href="#" class="card-link">Describe operations</a></li>
+                <li><a href="{% url 'frac:injections' 1 %}" class="card-link">Describe operations</a></li>
                 <li><a href="#" class="card-link">Well production data</a></li>
                 <li><a href="#" class="card-link">Lab samples</a></li>
                 <li><a href="#" class="card-link">Data QC</a></li>

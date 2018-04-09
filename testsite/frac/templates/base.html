@@ -33,8 +33,10 @@
             </div>
         </footer>
     {% endblock body %}
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.38.1/handsontable.full.min.js"></script>
-  {% block javascript %}{% endblock %}
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.38.1/handsontable.full.min.js"></script>
+    {% block javascript %}{% endblock %}
   </body>
 </html>

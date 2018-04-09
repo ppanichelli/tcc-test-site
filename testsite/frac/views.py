@@ -18,6 +18,6 @@ def new_project(request):
 
     return render(request, 'new-project.html', {'form': form})
 
-def injections(request):
-    project = Project.objects.get(pk=1)
-    return render(request, 'new-project.html', {'project': project})
+def injections(request, pk):
+    project = Project.objects.get(pk=pk)
+    return render(request, 'project-injections.html', {'project': project})

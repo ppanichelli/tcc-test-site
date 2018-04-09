@@ -1,0 +1,556 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.name }} Injections{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{% url 'frac:home' %}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'frac:new-project' %}">{{ project.name }}</a></li>
+    <li class="breadcrumb-item active">Injections</li>
+{% endblock %}
+
+{% block content %}
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+          <h3>{{ project.name }}</h3>
+          <hr/>
+          <p class="card-text">Customer: {{ project.customer_name }}</p>
+          <p class="card-text">CR: {{ project.cr }}</p>
+        </div>
+
+        <div class="col-md-9">
+            <h3>Tracer Injections</h3>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-1014-tab" data-toggle="tab" href="#nav-1014" role="tab" aria-controls="nav-1014" aria-selected="true">FP-1014</a>
+                    <a class="nav-item nav-link" id="nav-1015-tab" data-toggle="tab" href="#nav-1015" role="tab" aria-controls="nav-1015" aria-selected="false">FP-1015</a>
+                    <a class="nav-item nav-link" id="nav-1016-tab" data-toggle="tab" href="#nav-1016" role="tab" aria-controls="nav-1016" aria-selected="false">FP-1016</a>
+                </div>
+            </nav>
+            <div class="tab-content mt-2" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-1014" role="tabpanel" aria-labelledby="nav-1014-tab">
+                  <div class="well-injection-table" id="1014-table"></div>
+              </div>
+              <div class="tab-pane fade" id="nav-1015" role="tabpanel" aria-labelledby="nav-1015-tab">
+                  <div class="well-injection-table" id="1015-table"></div>
+              </div>
+              <div class="tab-pane fade" id="nav-1016" role="tabpanel" aria-labelledby="nav-1016-tab">
+                  <div class="well-injection-table" id="1016-table"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="container">
+            <a href="#" class="btn btn-success btn-block">Next step: enter production information</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    var do_1014 = [
+            {
+                stage: 1,
+                wg: "T-140B",
+                wg_mass: 92.82
+            },
+            {
+                stage: 2,
+                wg: "T-140B",
+                wg_mass: 80.98
+            },
+            {
+                stage: 3,
+                w: "T-809",
+                w_m: 405.75,
+                wg: "T-140B",
+                wg_mass: 58.0,
+                g: "T-328",
+                g_mass: 295
+            },
+            {
+                stage: 4,
+                wg: "T-140B",
+                wg_mass: 75.92
+            },
+            {
+                stage: 5,
+                wg: "T-140B",
+                wg_mass: 83.48
+            },
+            {
+                stage: 6,
+                wg: "T-140B",
+                wg_mass: 76.20
+            },
+            {
+                stage: 7,
+                wg: "T-140B",
+                wg_mass: 67.28
+            },
+            {
+                stage: 8,
+                wg: "T-140B",
+                wg_mass: 75.22
+            },
+            {
+                stage: 9,
+                wg: "T-140B",
+                wg_mass: 70.66
+            },
+            {
+                stage: 10,
+                w: "T-921",
+                w_m: 905.70,
+                wg: "T-140B",
+                wg_mass: 75.24,
+                g: "T-320",
+                g_mass: 253
+            },
+            {
+                stage: 11,
+                wg: "T-140B",
+                wg_mass: 87.14
+            },
+            {
+                stage: 12,
+                wg: "T-140B",
+                wg_mass: 80.46
+            },
+            {
+                stage: 13,
+                wg: "T-140B",
+                wg_mass: 77.78
+            },
+            {
+                stage: 14,
+                wg: "T-140B",
+                wg_mass: 80.26
+            },
+            {
+                stage: 15,
+                wg: "T-140B",
+                wg_mass: 84.24
+            },
+            {
+                stage: 16,
+                wg: "T-140B",
+                wg_mass: 75.14
+            },
+            {
+                stage: 17,
+                w: "T-802",
+                w_m: 966.24,
+                wg: "T-140B",
+                wg_mass: 83.94,
+                g: "T-350",
+                g_mass: 394
+            },
+            {
+                stage: 18,
+                wg: "T-140B",
+                wg_mass: 80.26
+            },
+            {
+                stage: 19,
+                wg: "T-140B",
+                wg_mass: 84.24
+            },
+            {
+                stage: 20,
+                wg: "T-140B",
+                wg_mass: 75.14
+            }
+    ];
+    var do_1016 = [
+            {
+                stage: 1,
+                wg: "T-140C",
+                wg_mass: 84.15
+            },
+            {
+                stage: 2,
+                wg: "T-140C",
+                wg_mass: 79.38
+            },
+            {
+                stage: 3,
+                w: "T-167D",
+                w_m: 405.75,
+                wg: "T-140C",
+                wg_mass: 58.0,
+                g: "T-400A",
+                g_mass: 301
+            },
+            {
+                stage: 4,
+                wg: "T-140C",
+                wg_mass: 75.92
+            },
+            {
+                stage: 5,
+                wg: "T-140C",
+                wg_mass: 83.48
+            },
+            {
+                stage: 6,
+                wg: "T-140C",
+                wg_mass: 76.20
+            },
+            {
+                stage: 7,
+                wg: "T-140C",
+                wg_mass: 67.28
+            },
+            {
+                stage: 8,
+                wg: "T-140C",
+                wg_mass: 75.22
+            },
+            {
+                stage: 9,
+                wg: "T-140C",
+                wg_mass: 70.66
+            },
+            {
+                stage: 10,
+                w: "T-190C",
+                w_m: 905.70,
+                wg: "T-140C",
+                wg_mass: 75.24,
+                g: "T-400B",
+                g_mass: 283
+            },
+            {
+                stage: 11,
+                wg: "T-140C",
+                wg_mass: 87.14
+            },
+            {
+                stage: 12,
+                wg: "T-140C",
+                wg_mass: 80.46
+            },
+            {
+                stage: 13,
+                wg: "T-140C",
+                wg_mass: 77.78
+            },
+            {
+                stage: 14,
+                wg: "T-140C",
+                wg_mass: 80.26
+            },
+            {
+                stage: 15,
+                wg: "T-140C",
+                wg_mass: 94.61
+            },
+            {
+                stage: 16,
+                wg: "T-140C",
+                wg_mass: 82.45
+            },
+            {
+                stage: 17,
+                w: "T-194A",
+                w_m: 983.14,
+                wg: "T-140C",
+                wg_mass: 83.94,
+                g: "T-412",
+                g_mass: 329
+            },
+            {
+                stage: 18,
+                wg: "T-140C",
+                wg_mass: 70.38
+            },
+            {
+                stage: 19,
+                wg: "T-140C",
+                wg_mass: 84.24
+            },
+            {
+                stage: 20,
+                wg: "T-140C",
+                wg_mass: 75.14
+            },
+            {
+                stage: 21,
+                wg: "T-140C",
+                wg_mass: 83.64
+            }
+    ];
+    var do_1015 = [
+            {
+                stage: 1,
+                w: "T-805",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-450C",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 2,
+                w: "T-805",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-450C",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 3,
+                w: "T-158B",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-438",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 4,
+                w: "T-158B",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-438",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 5
+            },
+            {
+                stage: 6,
+                w: "T-158E",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-326",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 7,
+                w: "T-806",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-400C",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 8,
+                w: "T-806",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-400C",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 9,
+                w: "T-190A",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-321",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 10,
+                w: "T-158D",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-321",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 11,
+                w: "T-804",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-450B",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 12,
+                w: "T-804",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-450B",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 13,
+                w: "T-158A",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-300",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 14,
+                w: "T-911",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-300",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 15,
+                w: "T-190B",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-400D",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 16,
+                w: "T-190B",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-400D",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 17,
+                w: "T-158C",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-450A",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 18,
+                w: "T-920",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-450A",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 19,
+                w: "T-916",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-300A",
+                g_mass: Math.round(Math.random()*32000)/100
+            },
+            {
+                stage: 20,
+                w: "T-912",
+                w_m: Math.round(Math.random()*9000)/100,
+                wg: "T-140A",
+                wg_mass: Math.round(Math.random()*7000)/100,
+                g: "T-300A",
+                g_mass: Math.round(Math.random()*32000)/100
+            }
+    ];
+
+    var my_columns = [
+        {
+            data: 'stage',
+            type: 'numeric',
+            editor: false
+        },
+        {
+            data: 'w',
+            type: 'text'
+        },
+        {
+            data: 'w_m',
+            type: 'numeric',
+            numericFormat: {
+                pattern: '0,0.00'
+            }
+        },
+        {
+            data: 'wg',
+            type: 'text'
+        },
+        {
+            data: 'wg_mass',
+            type: 'numeric',
+            numericFormat: {
+                pattern: '0,0.00'
+            }
+        },
+        {
+            data: 'g',
+            type: 'text'
+        },
+        {
+            data:'g_mass',
+            type: 'numeric',
+            numericFormat: {
+                pattern: '0,0.00'
+            }
+        }
+    ];
+
+    var container14 = document.getElementById('1014-table');
+    var container15 = document.getElementById('1015-table');
+    var container16 = document.getElementById('1016-table');
+
+    var hot16 = new Handsontable(container16, {
+        data: do_1016,
+        columns: my_columns,
+        rowHeaders: false,
+        contextMenu: true,
+        autoColumnSize: true,
+        maxRows: 21,
+        stretchH: 'all',
+        className: 'htCenter',
+        colHeaders: ['Stage', 'Water Tracer', 'W T Mass', 'Global Tracer', 'Global T Mass', 'Gas Tracer', 'Gas T Mass']
+    });
+    $('a[data-toggle="tab"][href="#nav-1016"]').on('shown.bs.tab', function (e) {
+  	    hot16.render();
+    });
+
+    var hot14 = new Handsontable(container14, {
+        data: do_1014,
+        columns: my_columns,
+        rowHeaders: false,
+        contextMenu: true,
+        autoColumnSize: true,
+        maxRows: 20,
+        stretchH: 'all',
+        className: 'htCenter',
+        colHeaders: ['Stage', 'Water Tracer', 'W T Mass', 'Global Tracer', 'Global T Mass', 'Gas Tracer', 'Gas T Mass']
+    });
+    $('a[data-toggle="tab"][href="#nav-1014"]').on('shown.bs.tab', function (e) {
+  	    hot14.render();
+    });
+
+    var hot15 = new Handsontable(container15,{
+        data: do_1015,
+        columns: my_columns,
+        rowHeaders: false,
+        contextMenu: true,
+        autoColumnSize: true,
+        maxRows: 20,
+        stretchH: 'all',
+        className: 'htCenter',
+        colHeaders: ['Stage', 'Water Tracer', 'W T Mass', 'Global Tracer', 'Global T Mass', 'Gas Tracer', 'Gas T Mass']
+    });
+    $('a[data-toggle="tab"][href="#nav-1015"]').on('shown.bs.tab', function (e) {
+  	    hot15.render();
+    });
+
+
+</script>
+{% endblock %}
